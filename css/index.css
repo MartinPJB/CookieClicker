@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  min-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+/* App */
+.app {
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+}
+
+/* Shop */
+.store {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  max-width: 20rem;
+
+  background-color: #eee;
+  border-right: 1px dotted #ccc;
+}
+
+.store .store__elements {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.store .store__elements .item {
+  display: block;
+  margin: 1rem;
+  position: relative;
+}
+.store .store__elements .item .item__details {
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 100%;
+  margin-top: .25rem;
+  transform: translateY(-1rem);
+  padding: .5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+}
+.store .store__elements .item:hover .item__details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.store .store__elements .item .item__buy {
+  display: block;
+  width: 100%;
+  padding: 1rem 1rem;
+  border: none;
+  text-align: left;
+  background-color: rgb(26, 173, 75);
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+/* Main area */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .content__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .content__button #clicks {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.content .content__button #clicks::after {
+  content: '⚡';
+}
+
+.content .content__button #clicker {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  animation: rotate 2s infinite ease-in-out;
+}
+.content .content__button #clicker .clicker__emoji {
+  display: block;
+  margin: 0 auto;
+  font-size: 10rem;
+  line-height: 1;
+  transition: transform .2s ease-in-out;
+}
+.content .content__button #clicker:hover .clicker__emoji {
+  transform: scale(1.1);
+}
+.content .content__button #clicker:active .clicker__emoji {
+  transform: scale(1);
+}
+
+/* Animations */
+@keyframes rotate {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}

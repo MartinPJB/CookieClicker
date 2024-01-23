@@ -6,13 +6,24 @@
   <title>PC clicker</title>
 
   <script src="./js/index.js" type="module" async defer></script>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <span id="clicks">0</span>
-  <button id="clicker">
-    💻
-  </button>
+  <main class="app">
+    <aside class="store">
+      <ul class="store__elements" id="store"></ul>
+    </aside>
 
-  <ul id="store"></ul>
+    <section class="content">
+      <div class="content__button">
+        <span id="clicks">0</span>
+        <button id="clicker">
+          <span class="clicker__emoji">
+            💻
+          </span>
+        </button>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
