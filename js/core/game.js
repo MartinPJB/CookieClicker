@@ -13,6 +13,7 @@ export default class Game {
     this.button = document.getElementById(id);
     this.clicks = 0;
     this.clicksAdder = 0;
+    this.clicksPerSecondAdder = 0;
     this.lastClickTime = 0;
     this.store = null;
 
@@ -32,6 +33,8 @@ export default class Game {
    * Interval handler.
    */
   interval() {
+    console.log(this.clicksPerSecondAdder);
+    this.clicks += 1 * this.clicksPerSecondAdder;
     this.renderSpan();
   }
 
@@ -124,6 +127,7 @@ export default class Game {
   resetGameProperties() {
     this.clicks = 0;
     this.clicksAdder = 0;
+    this.clicksPerSecondAdder = 0;
     this.lastClickTime = 0;
     this.store = null;
     this.clickIntervals = [];
